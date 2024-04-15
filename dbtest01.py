@@ -15,11 +15,13 @@ dbConn = pymysql.connect(host='localhost', user='root', password='12345', db='sh
 
 # 작명 = ~~~
 # sql = "SELECT * FROM membertbl"  # DB에 실행할 SQL문 생성
-sql = "INSERT INTO membertbl VALUES('ABC', '김동기', '대전 동구')"
+sql = "INSERT INTO membertbl VALUES('AAA', '강물병', '부산 해수욕장')"
 
 cur = dbConn.cursor()
 result = cur.execute(sql)  # 연결된 DB의 스키마에 지정된 SQL문이 실행됨
 # insert, update, delete 문이 실행된 후 성공결과를 반환해줌 -> 1이면 성공!!
+if result == 1:
+	print("회원 가입이 성공하였습니다!")
 print(result)
 
 # records = cur.fetchall()  # sql문에서 실행된 swlect문의 결과를 records로 받음
