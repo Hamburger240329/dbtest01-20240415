@@ -62,9 +62,19 @@ while True:
         cur.close()
         dbConn.commit()
 
+    elif menuNum == "4":
+        sql = "SELECT * FROM membertbl"
 
+        cur = dbConn.cursor()
+        cur.execute(sql)
+        memberList = cur.fetchall()  # select문의 결과를 반환(튜플)
 
-
+        print("********* 회원 리스트 *********")
+        for member in memberList:
+            # print(member)
+            print(member[0], end=" / ")
+            print(member[1], end=" / ")
+            print(member[2])
 
 
     elif menuNum == "5":
@@ -73,13 +83,4 @@ while True:
         break
     else:
         print("잘못 입력하셨습니다. 다시 입력해주세요.")
-
-
-
-
-
-
-
-
-
 
