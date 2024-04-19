@@ -24,14 +24,15 @@ if result == 1:
 	print("회원 가입이 성공하였습니다!")
 print(result)
 
-# records = cur.fetchall()  # sql문에서 실행된 swlect문의 결과를 records로 받음
+# records = cur.fetchall()  # sql문에서 실행된 select문의 결과를 records로 받음(튜플로 반환됨)
 
 # print(records)
 # print(records[0])  # 특정 레코드(1행)
 # print(records[0][1])  # 특정 레코드의 특정 값(ex:이순신)
 #
 # for member in records:
-#     print(member)
+#     print(member)  # 레코드 단위로 출력
+#     print(member[0])  # 아이디만 추출하여 출력
 
 # dbConn 을 열고나서 cur 을 만들었으므로 듣을대도 반대로 cur을 먼저 닫고 dbconn을 닫아야 한다
 # dbconn 의 사용이 종료된 후에는 반드시 닫아줄 것!(close:cur먼저 닫고 dbconn을 닫아야 함)
